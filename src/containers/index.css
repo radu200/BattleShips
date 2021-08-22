@@ -1,0 +1,45 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.board-rows {
+  display: flex;
+
+}
+
+.button {
+  border: none;
+  color: white;
+  margin-top: 10px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-start-game {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-start-game-disabled {
+  background-color: #889188;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
