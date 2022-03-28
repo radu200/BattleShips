@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Cell from '../components/Cell'
-import { generateBoard, placeShips, fire, getTotal, getGameStatus } from '../utils'
+import { generateBoard, placeShips, fire, getTotal, getGameStatus } from './helpers'
 import "./index.css"
 import * as types from '../types';
 import * as enums from '../enum';

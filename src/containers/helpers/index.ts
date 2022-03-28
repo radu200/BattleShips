@@ -1,5 +1,5 @@
-import * as types from '../types';
-import * as enums from '../enum';
+import * as types from '../../types';
+import * as enums from '../../enum';
 
 export function generateBoard(
   boardWidth: number,
@@ -18,11 +18,11 @@ export function generateBoard(
   return board;
 }
 
-function getRandomNumber(max: number): number {
+export function getRandomNumber(max: number): number {
   return Math.floor(Math.random() * max);
 }
 
-function getRandomCoordinates(
+export function getRandomCoordinates(
   boardWidth: number,
   boardHeight: number
 ): {
@@ -113,6 +113,7 @@ export function placeShips(
   boardWidth: number,
   boardHeight: number
 ) {
+
   for (let ship of ships) {
     const direction = getRandomNumber(2);
     if (direction === 0) {
@@ -165,18 +166,12 @@ export function fire(
   rowIndex: number,
   colIndex: number
 ): types.BattleShipBoard {
-  board.forEach((row, rindex) =>
-    row.forEach((col, cindex) => {
-      if (board[rindex][cindex] === board[rowIndex][colIndex]) {
-        if (board[rindex][cindex].isShip) {
-          board[rowIndex][colIndex].status = enums.Status.hit;
-        } else {
-          board[rowIndex][colIndex].status = enums.Status.missed;
-        }
-      }
-    })
-  );
-
+ 
+    if (board[rowIndex][colIndex].isShip) {
+        board[rowIndex][colIndex].status = enums.Status.hit;
+    } else {
+        board[rowIndex][colIndex].status = enums.Status.missed;
+    }
   return board;
 }
 
@@ -188,6 +183,7 @@ export function getTotal(
   totalHits: number;
   totalSunkShips: number;
 } {
+  
   let totalMissed: number = 0;
   let totalHits: number = 0;
   let totalSunkShips: number = 0;
